@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState } from "react";
 
 import video from "../../assets/background.mp4";
 import style from "./Styles.module.css";
@@ -7,30 +6,33 @@ import logo from "../../assets/LogoMinecraft2.png";
 import "./Styles.module.css";
 
 export const Login = () => {
-  const [email,setEmail ] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [check,setCheck] = useState(false);
-  const [count,setCount] = useState(0);
+  const [check, setCheck] = useState(false);
+  const [count, setCount] = useState(0);
 
-  function add(){
-   setCount((count) => count + 1);
+  function add() {
+    setCount((count) => count + 1);
   }
 
   useEffect(() => {
-    if(email === 'LucasBoeck@hotmail.com' && password === '2308'){
-    console.log(`Login Aprovado!`)
-    console.log(`Usuario : ${email}`);
-    console.log(`Senha : ${password}`);
-    console.log(`Aceitou os Termos ? ${check}`);
-  }else{
-    console.log('Login Inválido, tente novamente!')
-  }
-  },[count]);
+    if (count >= 1) {
+      if (email === "LucasBoeck@hotmail.com" && password === "2308") {
+        console.log(`Login Aprovado!`);
+        console.log(`Usuario : ${email}`);
+        console.log(`Senha : ${password}`);
+        console.log(`Aceitou os Termos ? ${check}`);
+        window.alert(`Bem Vindo!`);
+      } else {
+        window.alert("Login Inválido, tente novamente!");
+      }
+    }
+  }, [count]);
 
-  function validacheck(){
-   setCheck(!check)
+  function validacheck() {
+    setCheck(!check);
   }
- 
+
   return (
     <>
       <div className={style.conteiner}>
@@ -40,24 +42,29 @@ export const Login = () => {
         </div>
 
         <div className={style.content}>
-
           <p>Username</p>
           <input
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             className={style.formulario}
             type="text"
             placeholder=" Ex: GuguTremBalaGamer777"
           />
           <p>Password</p>
           <input
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             className={style.formulario}
-            type="text"
+            type="password"
             placeholder=" Ex: GuguBalaFina"
           />
 
           <div className={style.checkbox}>
-            <input className={style.check} id='checkbox' type="checkbox" name="remember" onClick={validacheck}/>
+            <input
+              className={style.check}
+              id="checkbox"
+              type="checkbox"
+              name="remember"
+              onClick={validacheck}
+            />
             <p>Lembre de mim</p>
           </div>
 
@@ -68,5 +75,5 @@ export const Login = () => {
       </div>
     </>
   );
-}
+};
 export default Login;
