@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "FonteMinecraft";
+  src: url("../../assets/fonts/FonteMinecraft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.logo {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 15px;
+
+  opacity: 0;
+  animation: fadeInAnimation 4s ease-in forwards;
+}
+
+
+.content {
+  justify-content: flex-start;
+  height: 430px;
+  width: 500px;
+  background-color: rgba(27, 27, 27, 0.863);
+  color: white;
+  font-family: "FonteMinecraft", sans-serif;
+  font-size: 30px;
+
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in forwards;
+}
+.formulario {
+  border-color: rgba(255, 255, 255, 0.48);
+  margin-left: 20px;
+  background-color: rgba(27, 27, 27, 0.073);
+  font-family: "FonteMinecraft", sans-serif;
+  font-size: 40px;
+  color: white;
+  display: flex;
+  height: 30px;
+  width: 400px;
+}
+
+p {
+  justify-content: flex-start;
+  display: flex;
+  margin-left: 20px;
+}
+
+.checkbox {
+  justify-content: flex-start;
+  display: flex;
+  margin-left: 20px;
+}
+.check {
+  width: 20px;
+}
+.botao {
+  font-family: "FonteMinecraft", sans-serif;
+  font-size: 35px;
+  color: rgb(255, 255, 255);
+  height: 50px;
+  width: 400px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  background-color: rgb(5, 154, 5);
+  border-radius: 7px;
+  border-color: rgb(0, 0, 0);
+}
+.botao:active {
+  transform: scale(0.95); /* Reduz o botão um pouco ao clicar */
+}
+
+/* animação fade in da logo e do content */
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
