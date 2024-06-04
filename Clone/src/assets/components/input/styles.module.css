@@ -1,0 +1,12 @@
+
+Input {
+    border-color: rgba(255, 255, 255, 0.48);
+    margin-left: 1.25rem;
+    background-color: rgba(27, 27, 27, 0.073);
+    font-family: "FonteMinecraft", sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    display: flex;
+    height: 1.875rem;
+    width: 25rem;
+  }

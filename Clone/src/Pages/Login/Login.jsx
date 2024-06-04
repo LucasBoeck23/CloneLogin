@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
-import video from "../../assets/background.mp4";
+import video from "../../assets/images/background.mp4";
 import style from "./Styles.module.css";
-import logo from "../../assets/LogoMinecraft2.png";
+import logo from "../../assets/images/LogoMinecraft2.png";
+import { Input } from '../../assets/components/input/index.jsx';
+import { Button } from '../../assets/components/button/index.jsx';
 import "./Styles.module.css";
 
 export const Login = () => {
@@ -43,18 +45,17 @@ export const Login = () => {
 
         <div className={style.content}>
           <p>Username</p>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            className={style.formulario}
-            type="text"
-            placeholder=" Ex: GuguTremBalaGamer777"
-          />
+        <Input
+          onChange={(e)=>
+          setEmail(e.target.value)}
+          type="text"
+          placeholder="Ex: GuguTremBala@Gmail.com"/>
+
           <p>Password</p>
-          <input
+          <Input
             onChange={(e) => setPassword(e.target.value)}
-            className={style.formulario}
             type="password"
-            placeholder=" Ex: GuguBalaFina"
+            placeholder=" Ex:Fofuria"
           />
 
           <div className={style.checkbox}>
@@ -68,9 +69,8 @@ export const Login = () => {
             <p>Lembre de mim</p>
           </div>
 
-          <button className={style.botao} onClick={add}>
-            <strong>LOG IN</strong>
-          </button>
+          <Button onClick={add} titulo={"LOG IN"} />
+
         </div>
       </div>
     </>
